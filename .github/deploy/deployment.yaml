@@ -1,24 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: test-github-actions
+  name: test-gh-action
   labels:
-    app: test-github-actions
+    app: test-gh-action
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: test-github-actions
+      app: test-gh-action
   template:
     metadata:
       labels:
-        app: test-github-actions
+        app: test-gh-action
     spec:
       containers:
-      - name: test-github-actions
-        image: triquenguyen/pi-test:0.0.6
+      - name: test-gh-action
+        image: triquenguyen/pi-test:0.0.7
         ports:
-        - containerPort: 7777
+        - containerPort: 80
         resources:
           requests:
             memory: "128Mi"
