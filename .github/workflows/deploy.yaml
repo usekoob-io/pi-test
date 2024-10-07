@@ -9,6 +9,9 @@ on:
     branches:
       - main
 
+env:
+  KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
+
 jobs:
   deploy:
     runs-on: self-hosted
@@ -23,9 +26,8 @@ jobs:
       - name: Check kubeconfig
         run: cat ~/.kube/config
 
-
       - name: Get Pods
-        run: kubectl --kubeconfig=~/.kube/config get pods
+        run: kubectl get pods
 
       # - name: Deploy App (Deployment)
       #   uses: actions-hub/kubectl@master
