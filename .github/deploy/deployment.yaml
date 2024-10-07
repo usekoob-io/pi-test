@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-github-actions
+  labels:
+    app: test-github-actions
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: test-github-actions
+  template:
+    metadata:
+      labels:
+        app: test-github-actions
+    spec:
+      containers:
+      - name: test-github-actions
+        image: triquenguyen/pi-test:latest
+        ports:
+        - containerPort: 7777
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "250m"
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
