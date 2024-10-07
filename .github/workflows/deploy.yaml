@@ -25,11 +25,7 @@ jobs:
 
 
       - name: Get Pods
-        uses: actions-hub/kubectl@master
-        env:
-          KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
-        with:
-          args: get pods
+        run: run: kubectl --kubeconfig=~/.kube/config get pods
 
       # - name: Deploy App (Deployment)
       #   uses: actions-hub/kubectl@master
