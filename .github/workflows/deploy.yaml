@@ -1,13 +1,10 @@
 name: Deploy to Kubernetes
 
 on:
-  # workflow_run:
-  #   workflows: ["Build and Push Docker Image"] # This workflow runs after the build workflow
-  #   types:
-  #     - completed
-  push:
-    branches:
-      - main
+  workflow_run:
+    workflows: ["Build and Push Docker Image"] # This workflow runs after the build workflow
+    types:
+      - completed
 
 env:
   KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
