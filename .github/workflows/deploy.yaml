@@ -25,7 +25,7 @@ jobs:
 
 
       - name: Get Pods
-        run: run: kubectl --kubeconfig=~/.kube/config get pods
+        run: kubectl --kubeconfig=~/.kube/config get pods
 
       # - name: Deploy App (Deployment)
       #   uses: actions-hub/kubectl@master
