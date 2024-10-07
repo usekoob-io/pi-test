@@ -16,14 +16,7 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
-      - name: Decode kubeconfig
-        run: echo "${{ secrets.KUBE_CONFIG }}" | base64 --decode > ~/.kube/config
-
-      - name: Check kubeconfig
-        run: cat ~/.kube/config
-
-
+        
       - name: Get Pods
         uses: actions-hub/kubectl@master
         env:
