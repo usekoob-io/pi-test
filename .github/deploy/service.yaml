@@ -8,5 +8,5 @@ spec:
     app: test-github-actions
   ports:
     - protocol: TCP
-      port: 7777
+      port: 80
       targetPort: 80
