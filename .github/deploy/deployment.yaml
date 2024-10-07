@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: test-github-actions
-        image: triquenguyen/pi-test:latest
+        image: triquenguyen/pi-test:0.0.5
         ports:
         - containerPort: 7777
         resources:
