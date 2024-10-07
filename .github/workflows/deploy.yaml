@@ -6,8 +6,8 @@ on:
     types:
       - completed
 
-env:
-  KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
+# env:
+#   KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
 
 jobs:
   deploy:
@@ -17,12 +17,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Deploy App (Deployment)
-        uses: actions-hub/kubectl@master
-        with:
-          args: apply -f .github/deploy/deployment.yaml
+      # - name: Deploy App (Deployment)
+      #   uses: actions-hub/kubectl@master
+      #   with:
+      #     args: apply -f .github/deploy/deployment.yaml
       
-      - name: Deploy App (Service)
-        uses: actions-hub/kubectl@master
-        with:
-          args: apply -f .github/deploy/service.yaml
+      # - name: Deploy App (Service)
+      #   uses: actions-hub/kubectl@master
+      #   with:
+      #     args: apply -f .github/deploy/service.yaml
