@@ -20,14 +20,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Kubeconfig
-        run: echo "${{ secrets.KUBE_CONFIG }}" | base64 -d > ~/.kube/config
+      - name: Deploy App (Deployment)
+        run: kubectl apply -f .github/deploy/deployment.yaml 
 
-      - name: Check kubeconfig
-        run: cat ~/.kube/config
+      - name: Deploy App (Service)
+        run: kubectl apply -f .github/deploy/service.yaml
 
-      - name: Get Pods
-        run: kubectl get pods
 
       # - name: Deploy App (Deployment)
       #   uses: actions-hub/kubectl@master
