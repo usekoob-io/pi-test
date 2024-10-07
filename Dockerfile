@@ -13,4 +13,4 @@ COPY ./app /code/app
 
 RUN uname -m
 
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "7777"]
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "80"]
