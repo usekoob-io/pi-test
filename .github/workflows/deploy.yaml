@@ -21,8 +21,6 @@ jobs:
         with:
           args: get pods
 
-    
-
       # - name: Deploy App (Deployment)
       #   uses: actions-hub/kubectl@master
       #   env:
